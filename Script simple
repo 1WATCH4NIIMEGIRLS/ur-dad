@@ -1,0 +1,92 @@
+-- Gui to Lua
+-- Version: 3.2
+
+-- Instances:
+
+local Script = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local Name = Instance.new("TextLabel")
+local credits = Instance.new("TextLabel")
+local print = Instance.new("TextButton")
+local close = Instance.new("TextButton")
+
+--Properties:
+
+Script.Name = "Script"
+Script.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+Script.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = Script
+Main.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
+Main.Position = UDim2.new(0.299120247, 0, 0.204819277, 0)
+Main.Size = UDim2.new(0, 339, 0, 253)
+
+Name.Name = "Name"
+Name.Parent = Main
+Name.BackgroundColor3 = Color3.fromRGB(130, 255, 102)
+Name.Position = UDim2.new(-0.00294117653, 0, 0, 0)
+Name.Size = UDim2.new(0, 340, 0, 25)
+Name.Font = Enum.Font.Unknown
+Name.Text = "Simple GUI"
+Name.TextColor3 = Color3.fromRGB(0, 0, 0)
+Name.TextScaled = true
+Name.TextSize = 14.000
+Name.TextWrapped = true
+
+credits.Name = "credits"
+credits.Parent = Main
+credits.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+credits.Position = UDim2.new(0, 0, 0.957446814, 0)
+credits.Size = UDim2.new(0, 340, 0, 10)
+credits.Font = Enum.Font.SourceSans
+credits.Text = "BY: me"
+credits.TextColor3 = Color3.fromRGB(139, 255, 6)
+credits.TextSize = 14.000
+
+print.Name = "print"
+print.Parent = Main
+print.BackgroundColor3 = Color3.fromRGB(174, 255, 161)
+print.Position = UDim2.new(0.0764705911, 0, 0.182978719, 0)
+print.Size = UDim2.new(0, 287, 0, 149)
+print.Font = Enum.Font.Unknown
+print.Text = "Print hello lol"
+print.TextColor3 = Color3.fromRGB(0, 0, 0)
+print.TextScaled = true
+print.TextSize = 14.000
+print.TextWrapped = true
+print.Parent.MouseButton1Down:Connect(function -- sorry but dont type "click :I"
+	print"hello lol" -- the script here
+end)
+
+close.Name = "close"
+close.Parent = Main
+close.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+close.Position = UDim2.new(0.893805325, 0, 0, 0)
+close.Size = UDim2.new(0, 36, 0, 25)
+close.Font = Enum.Font.SourceSans
+close.Text = "X"
+close.TextColor3 = Color3.fromRGB(255, 255, 255)
+close.TextScaled = true
+close.TextSize = 14.000
+close.TextWrapped = true
+
+-- Scripts:
+
+local function NERO_fake_script() -- close.LocalScript 
+	local script = Instance.new('LocalScript', close)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+	
+end
+coroutine.wrap(NERO_fake_script)()
+local function HEQCT_fake_script() -- Main.LocalScript 
+	local script = Instance.new('LocalScript', Main)
+
+	script.Parent.Draggable = true
+	script.Parent.Active = true
+end
+coroutine.wrap(HEQCT_fake_script)()
+-- these are script's so u cant delete them or something can go wrong
